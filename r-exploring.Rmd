@@ -1,0 +1,55 @@
+---
+title: "r-exploring"
+author: "Ruth Enriquez"
+date: "2022-08-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+# Explore daimond data-set
+
+```{r}
+#Show the column names
+names(diamonds)
+
+#Show the dimensions
+dim(diamonds)
+
+#Show the summary
+summary(diamonds)
+
+#Show the first 6 lines
+head(diamonds)
+
+#Show the last 6 lines
+tail(diamonds)
+
+#Try out skimr
+skimr::skim(diamonds)
+```
+
+#Create pairs plot using ggpairs()
+
+```{r, eval=FALSE}
+GGally::ggpairs(diamonds)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + 
+  geom_point()
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + 
+  geom_histogram()
+```
+
+
+
+
