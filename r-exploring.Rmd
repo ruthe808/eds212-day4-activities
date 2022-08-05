@@ -50,6 +50,11 @@ ggplot(data = diamonds, aes(x = carat)) +
   geom_histogram()
 ```
 
+```{r}
+ggplot(data = diamonds, aes(x = clarity, y = price)) + 
+  geom_jitter(width = 0.2,
+              alpha = 0.5)
+```
 
 
 
